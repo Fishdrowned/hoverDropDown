@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Plugin: hoverDropDown</title>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.hoverDropDown.js"></script>
+	<style type="text/css">
+		code{white-space:pre;}
+		ul,li{list-style:none;margin:0;padding:0;}
+		.clearer:after{display:block;content:".";clear:both;font-size:0;line-height:0;height:0;overflow:hidden;}
+		#container .handler{float:left;padding:.5em;}
+		#container .handler:hover{background:#eee;}
+		#container .handler .dropdown{background:#fff;border:1px solid #ddd;display:none;position:absolute;}
+		#container .handler .dropdown .item{padding:.5em;}
+	</style>
+</head>
+<body>
+	<h1>jQuery Plugin: hoverDropDown</h1>
+	<p>Version: 1.0</p>
+	<p>2013-01-18T13:23UTC+08:00</p>
+	<p><a href="./jquery.hoverDropDown.js">Download</a></p>
+	<p>Example:</p>
+	<code>
+		$("#container .handler").hoverDropDown($("#container .handler .dropdown"));
+	</code>
+
+	<p>You can also define slide down duration, slide up duration and slide up delay:</p>
+	<code>
+		$("#container .handler").hoverDropDown($("#container .handler .dropdown", {
+			slideDown: 500, /* default 300 */
+			slideUp: "fast", /* default 300 */
+			slideUpDelay: 100 /* default 300 */
+		}));
+	</code>
+	<ul id="container" class="clearer">
+		<li class="handler">
+			<a href="javascript:;">Handler 0: No drop down</a>
+		</li>
+		<li class="handler">
+			<a href="javascript:;">Handler 1</a>
+			<ul class="dropdown">
+				<li class="item">Item 1</li>
+				<li class="item">Item 2</li>
+				<li class="item">Item 3</li>
+				<li class="item">Item 4</li>
+			</ul>
+		</li>
+		<li class="handler">
+			<a href="javascript:;">Handler 2</a>
+			<ul class="dropdown">
+				<li class="item">Item 5</li>
+				<li class="item">Item 6</li>
+				<li class="item">Item 7</li>
+				<li class="item">Item 8</li>
+			</ul>
+		</li>
+	</ul>
+	<script type="text/javascript">
+		$("#container .handler").hoverDropDown($("#container .handler .dropdown"));
+	</script>
+</body>
+</html>
